@@ -1,0 +1,406 @@
+.info-page {
+    .iop-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+    }
+
+    .iop-item {
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+        position: relative;
+        border: 1px solid #333333;
+        padding: 10px;
+
+        &:hover {
+            .iop-img {
+                img {
+                    transform: translate(-50%, -50%) scale(1.1);
+                }
+            }
+
+            .iop-tt {
+                color: $main-cl;
+            }
+        }
+    }
+
+    .iop-img {
+        line-height: 0;
+        overflow: hidden;
+        background-color: #eeeeee;
+        width: 100%;
+        height: 220px;
+        position: relative;
+
+        img {
+            transition: all 0.3s ease;
+            @include pos-mid;
+            max-height: 100%;
+        }
+    }
+
+    .iop-content {
+        P {
+            line-height: 1.4;
+        }
+    }
+
+    .iop-cate {
+        background-color: #333333;
+        color: #fff;
+        width: 120px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .iop-date {
+        margin-bottom: 5px;
+    }
+
+    .iop-tt {
+        margin-bottom: 0;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        font-size: 20px;
+    }
+
+    .post-lk {
+        @include pos-full;
+        z-index: 1;
+    }
+}
+
+.info-detail {
+    .iod-box {
+        margin-bottom: 40px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .iod-ig {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .iod-img {
+        max-width: 100%;
+        width: 420px;
+        height: 290px;
+        position: relative;
+        background-color: #eeeeee;
+        line-height: 0;
+        margin-bottom: 0;
+
+        img {
+            @include pos-mid;
+            max-height: 100%;
+        }
+    }
+
+    .iod-tbl {
+        th {
+            width: 30%;
+        }
+    }
+}
+
+.iod-clip {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -7.5px;
+    li {
+        margin: 7.5px;
+        width: calc(100% / 4 - 15px);
+        height: 182px;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.iod-ft {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid $main-cl;
+    border-color: #333333;
+    padding: 30px;
+    position: relative;
+    z-index: 0;
+    // box-shadow: 8px 8px 0px #333;
+    background-color: rgba($color: #333, $alpha: .1);     
+
+    .iod-lt {
+        width: 40%;
+        padding-right: 15px;
+    }
+
+    .iod-rt {
+        width: 60%;
+        padding-left: 15px;
+    }
+
+    .iod-logo {
+        margin-bottom: 20px;
+        display: block;
+        img{
+            height: auto;
+        }
+    }
+
+    .iod-text {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+
+    .iod-info {
+        line-height: 1.8;
+    }
+
+    .iod-tkb {
+        th,
+        td {
+            border: none;
+            padding: 0;
+        }
+        th{
+            vertical-align: top;
+            text-align: left;
+            width: 100px;
+        }
+    }
+}
+
+.btn_prev_next {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    li {
+        width: 30%;
+        margin: 10px;
+
+        a {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            background: #fff;
+            color: $main-cl;
+            height: 100%;
+            text-align: center;
+            padding: 22px 40px 20px 40px;
+            text-decoration: none;
+            border: 2px solid $main-cl;
+            transition: all 0.3s ease;
+            font-size: 20px;
+
+            &:hover {
+                color: #fff;
+                background-color: $main-cl;
+            }
+        }
+    }
+
+    .prevPage {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .nextPage {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.pagination-wp {
+    margin-top: 30px;
+    text-align: center;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    li {
+        margin: 0 5px;
+
+        &.active,
+        &:hover {
+            a {
+                background-color: $main-cl;
+                color: $w-cl;
+            }
+        }
+
+        &.active {
+            a {
+                cursor: default;
+            }
+        }
+
+        &.disabled {
+            display: none;
+        }
+        a {
+            @include flex-mid;
+            width: 40px;
+            height: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            @include flex-mid;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+    }
+}
+
+@include max-media(750px) {
+    .info-page {
+        .iop-item {
+            width: calc(50% - 20px);
+        }
+
+        .iop-img {
+            height: 190px;
+        }
+        .iop-tt {
+            font-size: 16px;
+        }
+    }
+
+    .info-detail {
+        .iod-img {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .iod-clip{
+        li{
+            width: calc(50% - 15px);
+           
+        }
+    }
+
+    .iod-ft{
+        padding: 15px;
+        text-align: center;
+        .iod-lt{
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .iod-rt{
+            width: 100%;
+            padding-left: 0;
+        }
+
+        .iod-logo{
+            max-width: 310px;
+            margin: 0 auto 10px;
+        }
+
+        .iod-text{
+            font-size: 16px;
+        }
+
+        .iod-tkb{
+            width: 350px;
+            margin: 0 auto;
+            th{
+                width: 80px;
+            }
+            td{
+                text-align: left;
+            }
+        }
+    }
+    
+
+    .btn_prev_next {
+        flex-direction: column;
+        align-items: center;
+        li {
+            width: 100%;
+            position: static !important;
+            max-width: 270px;
+
+            a {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@include max-media(600px) {
+    .info-page {
+        .iop-item {
+            width: 100%;
+            margin: 0 0 15px 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .iop-list {
+            max-width: 290px;
+            margin: 0 auto;
+        }
+
+        .iop-cate {
+            width: 110px;
+            height: 38px;
+            margin-bottom: 12px;
+        }
+    }
+
+    .iod-clip{
+        justify-content: center;
+        li{
+            width: 322px;
+        }
+    }
+}
+
+@include max-media(425px) {
+    .info-detail {
+        .iod-img {
+            height: 220px;
+        }
+    }
+
+    .iod-ft{
+        .iod-tkb{
+            width: 100%;
+            tr{
+                display: block;
+                margin-bottom: 10px;
+            }
+            th ,td{
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include max-media(320px){
+    .iod-clip{
+        li{
+            height: 213px;
+        }
+    }
+}
